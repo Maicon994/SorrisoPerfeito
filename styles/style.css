@@ -233,6 +233,33 @@ img {
     color: var(--accent-dark);
 }
 
+.testimonial-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.testimonial-avatar {
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--accent-light);
+    flex-shrink: 0;
+}
+
+.testimonial-info h4 {
+    margin: 0;
+    color: var(--accent-dark);
+    font-size: 1.1rem;
+}
+
+.testimonial-info span {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
 
 
 /* Parte do formulario */
