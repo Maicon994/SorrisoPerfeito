@@ -1,21 +1,24 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SorrisoPerfeitoOdontologia</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/style.css">
 </head>
 
 <body>
-    <header>
-        <div>
-            <div>
+    <header class="header">
+        <div class="container navbar">
+            <div class="logo">
                 <h2>Sorriso Perfeito</h2>
             </div>
 
-            <nav>
+            <nav class="nav-menu">
                 <a href="home">Página Principal</a>
                 <a href="servicos">Serviços</a>
                 <a href="galeria">Galeria</a>
@@ -23,16 +26,16 @@
                 <a href="contato">Contate-nos</a>
             </nav>
 
-            <div>
-                <button aria-label="Mudar para Modo Escuro">🌓</button>
+            <div class="nav-controls">
+                <button id="theme-toggle" aria-label="Mudar para Modo Escuro">🌓</button>
             </div>
         </div>
     </header>
 
     <main>
         <!-- Página inicial -->
-        <section id="home">
-            <div>
+        <section id="home" class="hero section-animate">
+            <div class="container hero-content">
                 <h1>Sua melhor fase começa aqui</h1>
                 <p>Cuidado humanizado, tecnologia de ponta e profissionais qualificados para transformar a sua saúde
                     bucal.</p>
@@ -41,19 +44,18 @@
         </section>
 
         <!-- Serviços -->
-        <section id="servicos">
-            <h2>Nossos Serviços</h2>
-            <div>
-                <div>
+        <section id="servicos" class="services container section-animate">
+            <h2 class="section-title">Nossos Serviços</h2>
+            <div class="grid-services">
+                <div class="card">
                     <div class="card-icon">✨</div>
                     <h3>Clareamento Dental</h3>
-                    <p>Com nossa tecnologia de ponta e com técnicas modernas e seguras, seu sorriso branco e bonito pode
-                        voltar a aparecer em seu rosto.</p>
+                    <p>Recupere a brancura natural dos seus dentes com técnicas modernas e seguras.</p>
                 </div>
                 <div class="card">
-                    <div class="card-icon">🔩</div>
-                    <h3>Ordontologia</h3>
-                    <p>Aparelhos convencionais ou modernos para deixar seu sorriso alinhado e bonito novamente.</p>
+                    <div class="card-icon">🦷</div>
+                    <h3>Ortodontia</h3>
+                    <p>Aparelhos convencionais e invisíveis para alinhar seu sorriso com conforto.</p>
                 </div>
                 <div class="card">
                     <div class="card-icon">🔩</div>
@@ -67,8 +69,126 @@
                 </div>
             </div>
         </section>
+
+        <!-- Galeria da Clínica -->
+        <section id="galeria" class="gallery container section-animate">
+            <h2 class="section-title">Nossa Galeria</h2>
+            <div class="grid-gallery">
+                <img src="assets/img/consultorio.jpg" alt="Consultório Odontológico Moderno">
+                <img src="assets/img/dentista.jpg" alt="Dentista Atendendo Paciente">
+                <img src="assets/img/sorriso.jpg" alt="Sorriso Lindo e Saudável">
+                <img src="assets/img/equipe.jpg" alt="Equipamentos Odontológicos">
+            </div>
+            </div>
+        </section>
+
+        <!-- Depoimentos de Pacientes -->
+        <section id="depoimentos" class="testimonials container section-animate">
+            <h2 class="section-title">O que dizem nossos pacientes</h2>
+            <div class="flex-testimonials">
+
+                <div class="testimonial-item">
+                    <p>
+                        "Fiz um clareamento dental após anos evitando sorrir em fotos.
+                        O resultado ficou muito natural e superou minhas expectativas.
+                        Gostei especialmente da atenção da equipe durante todo o processo."
+                    </p>
+                    <h4>- Mariana Souza</h4>
+                </div>
+
+                <div class="testimonial-item">
+                    <p>
+                        "Cheguei à clínica precisando de um tratamento de canal e estava
+                        bastante nervoso. Os profissionais explicaram cada etapa com calma,
+                        o que me deixou muito mais tranquilo. A experiência foi bem melhor
+                        do que eu imaginava."
+                    </p>
+                    <h4>- Rafael Mendes</h4>
+                </div>
+
+                <div class="testimonial-item">
+                    <p>
+                        "Estou usando aparelho ortodôntico há alguns meses e já percebo uma
+                        grande diferença. As consultas são organizadas e os dentistas sempre
+                        esclarecem minhas dúvidas sobre o tratamento."
+                    </p>
+                    <h4>- Amanda Oliveira</h4>
+                </div>
+
+                <div class="testimonial-item">
+                    <p>
+                        "Levei minha filha de 8 anos para uma consulta preventiva e fiquei
+                        impressionada com o cuidado da equipe. Ela costuma ter medo de
+                        dentista, mas foi muito bem acolhida e saiu feliz da consulta."
+                    </p>
+                    <h4>- Fernanda Costa</h4>
+                </div>
+
+                <div class="testimonial-item">
+                    <p>
+                        "Minha experiência foi positiva no geral. Houve um pequeno atraso
+                        no horário da consulta, mas fui informado do motivo e atendido com
+                        muita atenção. O tratamento foi eficiente e pretendo retornar."
+                    </p>
+                    <h4>- Lucas Almeida</h4>
+                </div>
+
+                <div class="testimonial-item">
+                    <p>
+                        "Coloquei uma prótese dentária recentemente e fiquei muito satisfeito
+                        com o resultado. Além da qualidade do serviço, gostei da forma como
+                        acompanharam minha recuperação após o procedimento."
+                    </p>
+                    <h4>- Roberto Martins</h4>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contato-nos -->
+        <section id="contato" class="contact container section-animate">
+            <h2 class="section-title">Agende uma Avaliação</h2>
+            <div class="contact-wrapper">
+                <form id="contact-form" class="contact-form">
+                    <div class="form-group">
+                        <label for="name">Nome Completo</label>
+                        <input type="text" id="name" required placeholder="Ex: João Silva">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">E-mail</label>
+                        <input type="email" id="email" required placeholder="Ex: joao@email.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Mensagem</label>
+                        <textarea id="message" rows="5" required placeholder="Como podemos te ajudar?"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-submit">Enviar Mensagem</button>
+                </form>
+            </div>
+        </section>
+
     </main>
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-info">
+                <h3>Sorriso Perfeito</h3>
+                <p>📍 Av. da Saúde, 123 - Centro Clínico, Sala 402</p>
+                <p>📞 (11) 99999-8888</p>
+            </div>
+            <div class="footer-socials">
+                <a href="#" target="_blank">Instagram</a>
+                <a href="#" target="_blank">Facebook</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Sorriso Perfeito. Todos os direitos reservados. Desenvolvido por [Seu Nome].</p>
+        </div>
+    </footer>
+
+
+    <button id="back-to-top" title="Voltar ao topo">↑</button>
 
 </body>
+
+<script src="scripts/scripts.js"></script>
 
 </html>
