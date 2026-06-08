@@ -36,6 +36,10 @@ Este projeto foi desenvolvido como atividade acadêmica com o objetivo de constr
 - [x] **[Desafio Extra]** Animações de Scroll com CSS (`fade-in` e subida suave nas seções).
 - [x] **[Desafio Extra]** Botão dinâmico "Voltar ao Topo".
 
+## Imagens Exemplares do Site
+![alt text](telaInicialPrint.png)
+![alt text](servicosPrint.png)
+
 ## Como Executar o Projeto
 1. Faça o clone deste repositório ou baixe os arquivos.
 2. Abra a pasta raiz `/projetoSorrisoPerfeito`.
