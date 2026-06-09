@@ -109,13 +109,23 @@ img {
     justify-content: space-between;
     align-items: center;
     padding: 20px 0;
+    position: relative;
 }
-
 
 .logo img {
     max-height: 100px;
     width: auto;
     display: block;
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: var(--text-main);
+    transition: color var(--transition-speed);
 }
 
 .nav-menu a {
@@ -142,33 +152,61 @@ img {
 }
 
 .hero {
-    background: linear-gradient(rgba(169, 214, 229, 0.4), rgba(255, 255, 255, 0.2)), url('https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=1200') no-repeat center center/cover;
+    background: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.1)), url('https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=1200') no-repeat center center/cover;
     height: 80vh;
     display: flex;
     align-items: center;
     text-align: center;
-}
-
-[data-theme="dark"] .hero {
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=1200') no-repeat center center/cover;
+    justify-content: center;
 }
 
 .hero-content {
-    max-width: 700px;
+    max-width: 750px;
+    background-color: rgba(255, 255, 255, 0.75); 
+    backdrop-filter: blur(6px); 
+    -webkit-backdrop-filter: blur(6px);
+    padding: 35px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
 }
 
 .hero h1 {
     font-size: 3rem;
     margin-bottom: 20px;
-    color: var(--text-main);
+    color: #1a1c23; 
+    text-shadow: 0 2px 4px rgba(255, 255, 255, 0.8);
 }
 
 .hero p {
     font-size: 1.2rem;
     margin-bottom: 30px;
-    color: var(--text-muted);
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: #3f4254; 
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
 }
+
+
+[data-theme="dark"] .hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url('https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=1200') no-repeat center center/cover;
+}
+
+[data-theme="dark"] .hero-content {
+    background-color: transparent;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    box-shadow: none;
+    padding: 0;
+}
+
+[data-theme="dark"] .hero h1 {
+    color: var(--text-main);
+    text-shadow: none;
+}
+
+[data-theme="dark"] .hero p {
+    color: var(--text-muted); 
+}
+
 
 .services {
     background-color: var(--bg-secondary);
@@ -364,23 +402,105 @@ img {
 }
 
 @media (max-width: 768px) {
+    .container {
+        padding: 40px 15px;
+    }
+
     .navbar {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 15px 0;
+    }
+
+    .menu-toggle {
+        display: block;
+        order: 2;
+    }
+
+    .nav-controls {
+        order: 3;
+    }
+
+    .nav-menu {
+        display: none;
         flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: var(--bg-primary);
+        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.08);
+        padding: 20px 0;
+        z-index: 999;
         gap: 15px;
-        text-align: center;
+    }
+
+    .nav-menu.active {
+        display: flex;
     }
 
     .nav-menu a {
-        margin: 0 10px;
-        display: inline-block;
+        margin: 0;
+        padding: 10px 20px;
+        width: 100%;
+        text-align: center;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    }
+
+    .hero {
+        height: auto;
+        min-height: 70vh;
+        padding: 60px 0;
     }
 
     .hero h1 {
-        font-size: 2.2rem;
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1.1rem;
+    }
+
+    .grid-gallery {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 10px;
+    }
+
+    .grid-gallery img {
+        height: 180px;
+    }
+
+    .flex-testimonials {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .testimonial-item {
+        flex: 1 1 auto;
+    }
+
+    .contact-wrapper {
+        padding: 25px 20px;
     }
 
     .footer-content {
         flex-direction: column;
         text-align: center;
+        gap: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .section-title {
+        font-size: 1.8rem;
+    }
+
+    .hero h1 {
+        font-size: 1.7rem;
+    }
+
+    .grid-services {
+        grid-template-columns: 1fr;
+        padding: 0;
     }
 }

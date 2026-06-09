@@ -19,8 +19,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-
-    // Validação de campos preenchidos corretamente ou não
     const contactForm = document.getElementById("contact-form");
 
     contactForm.addEventListener("submit", (e) => {
@@ -43,7 +41,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const sections = document.querySelectorAll(".section-animate");
 
     const handleScrollEffects = () => {
-        // Desafio Extra: Mostrar/Esconder botão "Voltar ao Topo"
         if (window.scrollY > 300) {
             backToTopBtn.classList.add("show");
         } else {
@@ -71,4 +68,23 @@ document.addEventListener("DOMContentLoaded", () => {
     window.addEventListener("scroll", handleScrollEffects);
 
     handleScrollEffects();
+
+
+    const menuToggle = document.querySelector(".menu-toggle");
+    const navMenu = document.querySelector(".nav-menu");
+    const navLinks = document.querySelectorAll(".nav-menu a");
+
+    // Evento para abrir e fechar a cortina no clique
+    menuToggle.addEventListener("click", () => {
+        navMenu.classList.toggle("active");
+        menuToggle.textContent = navMenu.classList.contains("active") ? "✕" : "☰";
+    });
+
+
+    navLinks.forEach(link => {
+        link.addEventListener("click", () => {
+            navMenu.classList.remove("active");
+            menuToggle.textContent = "☰";
+        });
+    });
 });
